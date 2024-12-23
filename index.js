@@ -34,7 +34,12 @@ app.get('/cart/add', (req, res) => {
   let cartCopy = [...cart];
 
 
- const newProduct = { productId, name, price, quantity };
+ function addToCart(productId, name, price, quantity ) {
+  return { productId, name, price, quantity }
+ }
+
+ const newProduct = addToCart(productId, name, price, quantity );
+
 
 
   cartCopy.push(newProduct);
